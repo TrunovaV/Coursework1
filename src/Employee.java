@@ -51,13 +51,15 @@ public class Employee {
             return false;
         }
         Employee employee = (Employee) o;
-        return id == employee.id && Objects.equals(fullName, employee.fullName) && department == employee.department &&
-                salary == employee.salary;
+        return salary == employee.salary;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(salary);
     }
 
-
     public String toString() {
-        return "ID сотрудника: " + idCounter + ", Ф.И.О. сотрудника:" + this.fullName + ", отдел: " + this.department
+        return "ID сотрудника: " + id + ", Ф.И.О. сотрудника:" + this.fullName + ", отдел: " + this.department
                 + ", зарплата: " + this.salary + " руб.";
     }
 

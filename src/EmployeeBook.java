@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class EmployeeBook {
-    private static final Employee[] employees = new Employee[10];
+    private final Employee[] employees = new Employee[10];
 
 
     public boolean addEmployeeToBook(Employee newEmployee) {
@@ -51,6 +51,7 @@ public class EmployeeBook {
             switch (taxType.toUpperCase()) {
                 case "PROPORTIONAL":
                     tax = salary * 0.13;
+                    break;
 
                 case "PROGRESSIVE":
                     if (salary <= 150) {
@@ -99,7 +100,7 @@ public class EmployeeBook {
         }
     }
 
-    public static void printEmployeesWithSalaryLessThan(double wage, int employeeNumber) {
+    public void printEmployeesWithSalaryLessThan(double wage, int employeeNumber) {
         int i = 0;
         int count = 0;
 
